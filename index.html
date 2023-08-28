@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1 class="heading">WEATHER APP</h1>
+
+        <!-- <button id="themeSwitch">Switch Theme</button> -->
+
+        <!-- tabs -->
+        <div class="tab-container">
+            <p class="tab" data-yourWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+
+        <div class="weather-container">
+            <!-- Grant Location -->
+            <div class="sub-container grant-location-container">
+                <img src="location.png" height="80" width="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow Access to get Weather Information</p>
+                <button class="btn" data-grantAccess>Grant Access</button>
+            </div>
+
+            <form class="form-container" data-searchForm>
+                <input type="text" placeholder="Search for city" data-searchInput>
+                <button class="btn" type="submit">
+                    <img src="search.png" height="20" width="20" loading="lazy">
+                </button>
+            </form>
+
+            <div class="sub-container loading-container">
+                <img src="loading.gif" height="150" width="150">
+                <p>Loading</p>
+            </div>
+
+            <div class="sub-container show-weather-info">
+                <div class="name">
+                    <p data-city-name></p>
+                    <img data-country-icon>
+                </div>
+
+                <p data-wetherDescription></p>
+                <img data-weatherIcon>
+                <p data-temp></p>
+
+                <div class="parameter-container">
+                    <div class="parameter">
+                        <img src="wind.png">
+                        <p>Windspeed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+                    <div class="parameter">
+                        <img src="humidity.png">
+                        <p>Humidity</p>
+                        <p data-humidity></p>
+                    </div>
+
+                    <div class="parameter">
+                        <img src="cloud.png">
+                        <p>Clouds</p>
+                        <p data-cloud></p>
+                    </div>
+                </div>
+                <div>
+                    <p data-showDate></p>
+                    <p>Date/Time: <span id="datetime"></span></p>
+    
+                    <script>
+                        var dt = new Date();
+                        document.getElementById("datetime").innerHTML = dt.toLocaleString();
+                    </script>
+                </div>
+            </div>
+
+            
+
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
